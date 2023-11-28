@@ -27,6 +27,9 @@
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
+  .banner__box {
+    background-color: (255,255,255, {{ section.settings.banner_box_opacity | divided_by: 100.0 }})
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -194,6 +197,16 @@
       "unit": "%",
       "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
       "default": 0
+    },
+    {
+      "type": "range",
+      "id": "banner_box_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "t:sections.image-banner.settings.banner_box_opacity.label",
+      "default": 100
     },
     {
       "type": "select",
