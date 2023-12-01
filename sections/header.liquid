@@ -195,7 +195,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- liquid
+    {% - liquid
       if section.settings.menu != blank
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
@@ -338,7 +338,22 @@
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
+<script>
+  let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
+  console.log(items)
+  items.forEach(item => {
+    item.addEventListener("mouseover", () => {
+      item.setAttribute("open", true);
+      item.querySelector("ul").addEventListener("mouseleave", () => {
+        item.removeAttribute("open");
+      });
+      item.addEventListener("mouseleave", () => {
+        item.removeAttribute("open");
+      });
+    });
 
+  });
+</script>
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
 {%- endif -%}
