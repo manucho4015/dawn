@@ -46,7 +46,6 @@ slider-component.slider-component-full-width {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-left: 1.5rem;
-    -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
   }
 
@@ -76,7 +75,7 @@ slider-component.slider-component-full-width {
   .slider.slider--tablet-up {
     position: relative;
     flex-wrap: inherit;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-left: 1rem;
@@ -92,7 +91,7 @@ slider-component.slider-component-full-width {
   .slider.slider--tablet {
     position: relative;
     flex-wrap: inherit;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-left: 1.5rem;
@@ -126,7 +125,7 @@ slider-component.slider-component-full-width {
 .slider--everywhere {
   position: relative;
   flex-wrap: inherit;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -146,7 +145,7 @@ slider-component.slider-component-full-width {
   .slider--desktop {
     position: relative;
     flex-wrap: inherit;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -226,18 +225,22 @@ slider-component.slider-component-full-width {
 
 .slider {
   scrollbar-color: rgb(var(--color-foreground)) rgba(var(--color-foreground), 0.04);
-  -ms-overflow-style: none;
+  /* -ms-overflow-style: -ms-autohiding-scrollbar; */
   scrollbar-width: none;
 }
 
 .slider::-webkit-scrollbar {
-  height: 0.4rem;
+  height: 0.5rem;
   width: 0.4rem;
-  display: none;
+  display: block;
+  padding: 0 10vw;
+}
+.slider::-webkit-scrollbar-track {
+  width: 40%;
 }
 
 .no-js .slider {
-  -ms-overflow-style: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   scrollbar-width: auto;
 }
 

@@ -1,5 +1,6 @@
 .mega-menu {
   position: static;
+  
 }
 
 .mega-menu__content {
@@ -14,6 +15,7 @@
   position: absolute;
   right: 0;
   top: 100%;
+  height: 40vh;
 }
 
 .shopify-section-header-sticky .mega-menu__content {

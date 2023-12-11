@@ -113,7 +113,7 @@
 }
 
 .card__inner {
-  width: 75%;
+  width: 100%;
 }
 
 .card--media .card__inner .card__content {
@@ -300,7 +300,6 @@
 }
 
 .card--standard:not(.card--horizontal) .placeholder-svg {
-  height: auto;
   width: 100%;
 }
 
