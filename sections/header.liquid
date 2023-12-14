@@ -200,7 +200,7 @@
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
         elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
+        render 'header-mega-menu', img_0: section.settings.mega_img_1, img_1: section.settings.mega_img_2
         endif
       endif
     %}
@@ -618,6 +618,21 @@
       "type": "header",
       "content": "t:sections.header.settings.header__3.content",
       "info": "t:sections.header.settings.header__4.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "mega_img_1",
+      "label": "t:sections.header.settings.mega_img_1.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mega_img_2",
+      "label": "t:sections.header.settings.mega_img_2.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mega_img_3",
+      "label": "t:sections.header.settings.mega_img_3.label"
     },
     {
       "type": "checkbox",

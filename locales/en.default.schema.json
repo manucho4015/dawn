@@ -822,6 +822,12 @@
           "settings": {
             "collection": {
               "label": "Collection"
+            },
+            "button_label": {
+              "label": "Button Label"
+            },
+            "button_link": {
+              "label": "Button Link"
             }
           }
         }
@@ -1243,6 +1249,15 @@
         },
         "menu": {
           "label": "Menu"
+        },
+        "mega_img_1": {
+          "label": "Mega Menu Image 1"
+        },
+        "mega_img_2": {
+          "label": "Mega Menu Image 2"
+        },
+        "mega_img_3": {
+          "label": "Mega Menu Image 3"
         },
         "menu_type_desktop": {
           "label": "Desktop menu type",
