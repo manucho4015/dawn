@@ -1010,9 +1010,17 @@ summary::-webkit-details-marker {
     max-width: calc(20% - var(--grid-desktop-horizontal-spacing) * 4 / 5);
   }
 
-  .grid--4-col-desktop .grid__item {
+  .grid--4-col-desktop.small-card .grid__item {
     width: calc(10% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
     max-width: calc(10% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+  }
+  .grid--4-col-desktop.medium-card .grid__item {
+    width: calc(17.5% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+    max-width: calc(17.5% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+  }
+  .grid--4-col-desktop.large-card .grid__item {
+    width: calc(40% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+    max-width: calc(40% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
   }
 
   .grid--3-col-desktop .grid__item {

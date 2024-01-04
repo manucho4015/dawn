@@ -126,13 +126,15 @@ endif
             {%- for block in section.blocks -%}
             {%- case block.type -%}
             {%- when 'heading' -%}
-            <h2 class="banner__heading inline-richtext {{ block.settings.heading_size }}" {{ block.shopify_attributes
+                {% comment %} ANSU - set text color from editor {% endcomment %}
+            <h2 style="color: {{ section.settings.font_color }};" class="banner__heading inline-richtext {{ block.settings.heading_size }}" {{ block.shopify_attributes
                 }}>
                 {{ block.settings.heading }}
             </h2>
             {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                <p>{{ block.settings.text }}</p>
+                {% comment %} ANSU - set text color from editor {% endcomment %}
+                <p style="color: {{ section.settings.font_color }};">{{ block.settings.text }}</p>
             </div>
             {%- when 'buttons' -%}
             <div class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
@@ -196,6 +198,12 @@ endif
 "unit": "%",
 "label": "t:sections.image-banner-custom.settings.banner_box_opacity.label",
 "default": 100
+},
+{
+    "type": "color",
+    "id": "font_color",
+    "label": "t:sections.image-banner-custom.settings.font_color.label",
+    "default": "#FFFFFF"
 },
 {
 "type": "select",

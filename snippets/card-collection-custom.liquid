@@ -50,13 +50,15 @@ endif
       {% if card_collection.featured_image == nil and card_style == 'card' %} ratio{% endif %}
     " style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
         
+        {% comment %} ANSU - standardize card size (small, medium, large) {% endcomment %}
+        
         <div class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
-            style="--ratio-percent: 70vh;">
+            style="{% if card_size == 'small' %}{% endif %}{% if card_size == 'medium' %}--ratio-percent: 60vh;{% endif %}{% if card_size == 'large' %}--ratio-percent: 75vh;{% endif %}">
             <span style="height: 35px; width: 70px">Shop</span>
             {%- if card_collection.featured_image -%}
             <div class="card__media">
                 
-                <div class="media media--transparent ">
+                <div class="media media--transparent media--hover-effect">
                     <img srcset="
                 {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
                 {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
@@ -72,8 +74,7 @@ endif
                 calc(100vw - 3rem)
               " alt="" height="{{ card_collection.featured_image.height }}"
                         width="{{ card_collection.featured_image.width }}" loading="lazy" class="motion-reduce">
-                        <a role="link" href="{{ card_collection.url }}"><button class="link-btn"
-                            style="position: absolute; height: 35px; width: 40%; top: 87.5%; left: 5%; border-radius: 20px; border: none; background-color: #ffffffb0">{{ button_label }}</button></a>
+                        
                         
                 </div>
             </div>
@@ -115,12 +116,12 @@ endif
                     <a {% if card_collection==blank %} role="link" aria-disabled="true" {% else %}
                         href="{{ card_collection.url }}" {% endif %} class="full-unstyled-link">
                         {%- if card_collection.title != blank -%}
-                        {% comment %} {{- card_collection.title | escape -}} {% endcomment %}
+                        {{- card_collection.title | escape -}}
                         {%- else -%}
-                        {% comment %} {{ 'onboarding.collection_title' | t }} {% endcomment %}
+                        {{ 'onboarding.collection_title' | t }}
                         {%- endif -%}
                         {%- if card_collection.featured_image or card_collection.description == blank -%}
-                        {% comment %} <span class="icon-wrap">{% render 'icon-arrow' %}</span> {% endcomment %}
+                        <span class="icon-wrap">{% render 'icon-arrow' %}</span>
                         {%- endif %}
                     </a>
                 </h3>
@@ -134,7 +135,7 @@ endif
         </div>
         {%- endif -%}
         {%- if card_collection == blank -%}
-        {% comment %} <div class="card__content">
+         <div class="card__content">
             <div class="card__information">
                 <h3 class="card__heading card__heading--placeholder">
                     <a role="link" aria-disabled="true" class="full-unstyled-link">
@@ -143,7 +144,7 @@ endif
                     </a>
                 </h3>
             </div>
-        </div> {% endcomment %}
+        </div> 
         {%- endif -%}
     </div>
 </div>

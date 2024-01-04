@@ -794,6 +794,19 @@
           },
           "info": "Add images by editing your collections. [Learn more](https://help.shopify.com/manual/products/collections)"
         },
+        "card_size": {
+          "label": "Card Sizes",
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          },
+          "info": "Add images by editing your collections. [Learn more](https://help.shopify.com/manual/products/collections)"
+        },
         "columns_desktop": {
           "label": "Number of columns on desktop"
         },
@@ -946,6 +959,18 @@
         },
         "header": {
           "content": "Product card"
+        },
+        "card_size": {
+          "label": "Card Size",
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          }
         },
         "image_ratio": {
           "label": "Image ratio",
@@ -1259,12 +1284,31 @@
         "mega_img_3": {
           "label": "Mega Menu Image 3"
         },
+        "mega_link_1": {
+          "label": "Image Link 1"
+        },
+        "mega_link_2": {
+          "label": "Image Link 2"
+        },
+        "mega_link_3": {
+          "label": "Image Link 3"
+        },
+        "img_label_1": {
+          "label": "Image Label 1"
+        },
+        "img_label_2": {
+          "label": "Image Label 2"
+        },
+        "img_label_3": {
+          "label": "Image Label 3"
+        },
         "menu_type_desktop": {
           "label": "Desktop menu type",
           "info": "Menu type is automatically optimized for mobile.",
           "options__1": {
             "label": "Dropdown"
           },
+          
           "options__2": {
             "label": "Mega menu"
           },
@@ -1502,6 +1546,9 @@
         },
         "banner_box_opacity": {
           "label": "Banner box opacity"
+        },
+        "font_color": {
+          "label": "Font Color"
         },
         "image_height": {
           "label": "Banner height",
@@ -2085,6 +2132,165 @@
       },
       "presets": {
         "name": "Multirow"
+      }
+    },
+    "multirow-custom": {
+      "name": "Custom Multirow",
+      "settings": {
+        "image": {
+          "label": "Image"
+        },
+        "image_height": {
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Small"
+          },
+          "options__3": {
+            "label": "Medium"
+          },
+          "options__4": {
+            "label": "Large"
+          },
+          "label": "Image height"
+        },
+        "desktop_image_width": {
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          },
+          "label": "Desktop image width",
+          "info": "Image is automatically optimized for mobile."
+        },
+        "heading_size": {
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          },
+          "label": "Heading size"
+        },
+        "text_style": {
+          "options__1": {
+            "label": "Body"
+          },
+          "options__2": {
+            "label": "Subtitle"
+          },
+          "label": "Text style"
+        },
+        "button_style": {
+          "options__1": {
+            "label": "Solid button"
+          },
+          "options__2": {
+            "label": "Outline button"
+          },
+          "label": "Button style"
+        },
+        "desktop_content_alignment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          },
+          "label": "Desktop content alignment"
+        },
+        "desktop_content_position": {
+          "options__1": {
+            "label": "Top"
+          },
+          "options__2": {
+            "label": "Middle"
+          },
+          "options__3": {
+            "label": "Bottom"
+          },
+          "label": "Desktop content position",
+          "info": "Position is automatically optimized for mobile."
+        },
+        "image_layout": {
+          "options__1": {
+            "label": "Alternate from left"
+          },
+          "options__2": {
+            "label": "Alternate from right"
+          },
+          "options__3": {
+            "label": "Aligned left"
+          },
+          "options__4": {
+            "label": "Aligned right"
+          },
+          "label": "Desktop image placement",
+          "info": "Placement is automatically optimized for mobile."
+        },
+        "container_color_scheme": {
+          "label": "Container color scheme"
+        },
+        "mobile_content_alignment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          },
+          "label": "Mobile content alignment"
+        },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        }
+      },
+      "blocks": {
+        "row": {
+          "name": "Row",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "caption": {
+              "label": "Caption"
+            },
+            "heading": {
+              "label": "Heading"
+            },
+            "text": {
+              "label": "Text"
+            },
+            "button_label": {
+              "label": "Button label"
+            },
+            "button_link": {
+              "label": "Button link"
+            },
+            "img_width": {
+              "label": "Image Width"
+            },
+            "reverse_row": {
+              "label": "Reverse Row Display"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Custom Multirow"
       }
     },
     "main-account": {

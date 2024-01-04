@@ -8,11 +8,6 @@
     text-align: center;
 }
 
-.banner__box h2,
-.banner__box p {
-    color: #fff;
-}
-
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
 .banner__box.gradient {
     transform: perspective(0);
@@ -98,7 +93,7 @@
     }
 
     .banner--large:not(.banner--adapt) {
-        min-height: 40rem;
+        min-height: 70rem;
     }
 
     .banner__content.banner__content--top-left {

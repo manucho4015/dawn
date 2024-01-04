@@ -200,7 +200,7 @@
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
         elsif section.settings.menu_type_desktop != 'drawer'
-        render 'header-mega-menu', img_0: section.settings.mega_img_1, img_1: section.settings.mega_img_2
+        render 'header-mega-menu', img_0: section.settings.mega_img_1, img_1: section.settings.mega_img_2, link_0 : section.settings.mega_link_1, link_1: section.settings.mega_link_2, img_label_0: section.settings.img_label_1, img_label_1: section.settings.img_label_2
         endif
       endif
     %}
@@ -625,14 +625,44 @@
       "label": "t:sections.header.settings.mega_img_1.label"
     },
     {
+    "type": "text",
+    "id": "img_label_1",
+    "label": "t:sections.header.settings.img_label_1.label"
+    },
+    {
+    "type": "url",
+    "id": "mega_link_1",
+    "label": "t:sections.header.settings.mega_link_1.label"
+    },
+    {
       "type": "image_picker",
       "id": "mega_img_2",
       "label": "t:sections.header.settings.mega_img_2.label"
     },
     {
+    "type": "text",
+    "id": "img_label_2",
+    "label": "t:sections.header.settings.img_label_2.label"
+    },
+    {
+    "type": "url",
+    "id": "mega_link_2",
+    "label": "t:sections.header.settings.mega_link_2.label"
+    },
+    {
       "type": "image_picker",
       "id": "mega_img_3",
       "label": "t:sections.header.settings.mega_img_3.label"
+    },
+    {
+    "type": "text",
+    "id": "img_label_3",
+    "label": "t:sections.header.settings.img_label_3.label"
+    },
+    {
+    "type": "url",
+    "id": "mega_link_3",
+    "label": "t:sections.header.settings.mega_link_3.label"
     },
     {
       "type": "checkbox",

@@ -92,7 +92,7 @@
   }
 
   .banner--large:not(.banner--adapt) {
-    min-height: 40rem;
+    min-height: 70rem;
   }
 
   .banner__content.banner__content--top-left {

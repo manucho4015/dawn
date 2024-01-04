@@ -33,10 +33,10 @@ endif
         {%- unless section.settings.title == blank -%}
         <div
             class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
-            {% comment %} <h2 id="SectionHeading-{{ section.id }}"
+           <h2 id="SectionHeading-{{ section.id }}"
                 class="collection-list-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
                 {{ section.settings.title }}
-            </h2> {% endcomment %}
+            </h2> 
 
             {%- if section.settings.show_view_all and show_mobile_slider -%}
             <a href="{{ routes.collections_url }}" id="ViewAll-{{ section.id }}"
@@ -68,6 +68,7 @@ endif
                     {% render 'card-collection-custom',
                     card_collection: block.settings.collection,
                     button_label: block.settings.button_label,
+                    card_size: section.settings.card_size
                     media_aspect_ratio: "inherit",
                     columns: columns,
                     placeholder_image: placeholder_image
@@ -173,6 +174,26 @@ endif
 "default": "square",
 "label": "t:sections.collection-list-new.settings.image_ratio.label",
 "info": "t:sections.collection-list-new.settings.image_ratio.info"
+},
+{
+"type": "select",
+"id": "card_size",
+"options": [
+{
+"value": "small",
+"label": "t:sections.collection-list-new.settings.card_size.options__1.label"
+},
+{
+"value": "medium",
+"label": "t:sections.collection-list-new.settings.card_size.options__2.label"
+},
+{
+"value": "large",
+"label": "t:sections.collection-list-new.settings.card_size.options__3.label"
+}
+],
+"default": "small",
+"label": "t:sections.collection-list-new.settings.card_size.label"
 },
 {
 "type": "range",
