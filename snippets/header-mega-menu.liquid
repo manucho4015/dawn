@@ -65,7 +65,7 @@
                       <p style="position: absolute; top: 70%; left: 15%; z-index: 11; font-weight: bold; text-transform: uppercase; color: white">{{ img_label_0 }}</p>
                     </a>
                     <a href="{{ link_0 }}">
-                    <img style="position: absolute; border-radius: 10px; box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.4);height: 150px width: 80%; left: 10%;" src="{{ img_0 | image_url: width: 600 }}" width=""  height="" loading="lazy" alt="" />
+                    <img style="position: absolute; border-radius: 10px; box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.4); height: 150px; width: 80%; left: 10%;"width=""  height="" loading="lazy" src="{{ img_0 | image_url: width: 600 }}"  alt="" />
                     </a>
                   {%- endif -%}
                   {%- if cur_index == 2 -%}
@@ -77,7 +77,7 @@
                     <a href="{{ link_1 }}">
                       <img
                         style="position: absolute; border-radius: 10px; box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.4); height: 150px; width: 80%; left: 10%" width=""  height="" loading="lazy"
-                        src="{{ img_1 |  image_url: width: 600 }}" alt="">
+                        src="{{ img_1 | image_url: width: 600 }}" alt="">
                     </a>
                   {%- endif -%}
                 </div>
