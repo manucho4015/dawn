@@ -1,5 +1,6 @@
+/* ANSU - Remove default white color background on feature collection */
 .collection {
-  background-color: white;
+  /* background-color: white; */
   margin: 0 5vw;
 }
 @media screen and (max-width: 749px) {

@@ -1305,7 +1305,10 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button--secondary:after {
-  --border-opacity: calc(1 - var(--buttons-border-opacity));
+  --border-opacity: var(--buttons-border-opacity);
+}
+.custom-banner-btn.button--secondary:after {
+  --border-opacity: calc(1 - var(--buttons-border-opacity));;
 }
 
 .button:focus-visible,

@@ -49,12 +49,23 @@
 -%}
 
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
-  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
-    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+  <div style="background-color: {{ section.settings.featured_collection_color_scheme }}" class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
+    <div class="collection__title title-wrapper title-wrapper--no-top-margin{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
       {%- if section.settings.title != blank -%}
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 style="display: inline-block;" class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {{ section.settings.title }}
         </h2>
+      {%- endif -%}
+      {%- if section.settings.show_view_all and more_in_collection -%}
+      <div
+        style="display: inline-block; margin-left: 5vw"
+        class="collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <a href="{{ section.settings.collection.url }}"
+          class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
+          aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}">
+          {{ 'sections.featured_collection.view_all' | t }}
+        </a>
+      </div>
       {%- endif -%}
       {%- if section.settings.description != blank
         or section.settings.show_description
@@ -150,7 +161,7 @@
       {%- endif -%}
     </slider-component>
 
-    {%- if section.settings.show_view_all and more_in_collection -%}
+    {% comment %} {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <a
           href="{{ section.settings.collection.url }}"
@@ -160,7 +171,7 @@
           {{ 'sections.featured_collection.view_all' | t }}
         </a>
       </div>
-    {%- endif -%}
+    {%- endif -%} {% endcomment %}
     {% if section.settings.image_shape == 'arch' %}
       {% render 'mask-arch' %}
     {%- endif -%}
@@ -230,6 +241,12 @@
       "label": "t:sections.featured-collection.settings.description.label"
     },
     {
+    "type": "color_scheme",
+    "id": "featured_collection_color_scheme",
+    "label": "t:sections.featured-collection.settings.featured_collection_color_scheme.label",
+    "default": "scheme-1"
+    },
+    {
       "type": "checkbox",
       "id": "show_description",
       "label": "t:sections.featured-collection.settings.show_description.label",
@@ -287,7 +304,7 @@
       "type": "checkbox",
       "id": "full_width",
       "label": "t:sections.featured-collection.settings.full_width.label",
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",
@@ -349,7 +366,7 @@
           "label": "t:sections.featured-collection.settings.card_size.options__3.label"
         }
       ],
-      "default": "small",
+      "default": "medium",
       "label": "t:sections.featured-collection.settings.card_size.label"
     },
     {
@@ -461,7 +478,7 @@
     {
       "type": "checkbox",
       "id": "swipe_on_mobile",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
     },
     {
