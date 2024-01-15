@@ -82,11 +82,11 @@
     </div>
 
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <div class="side-banner">
+      {% comment %} <div class="side-banner">
         <div class="image-box" style="background: url({{section.settings.favicon | img_url:'master' }});">
       
         </div>
-      </div>
+      </div> {% endcomment %}
       <ul
         id="Slider-{{ section.id }}"
         class="{% if section.settings.card_size == 'small' %} small-card {% endif %}{% if section.settings.card_size == 'medium' %} medium-card {% endif %}{% if section.settings.card_size == 'large' %} large-card {% endif %}grid grid--uniform grid--view-items product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
@@ -170,7 +170,7 @@
         >
           {{ 'sections.featured_collection.view_all' | t }}
         </a>
-      </div>
+      </div>si
     {%- endif -%} {% endcomment %}
     {% if section.settings.image_shape == 'arch' %}
       {% render 'mask-arch' %}
